@@ -1,0 +1,113 @@
+.users-page {
+  padding: 2rem;
+  color: #26375e;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-header h1 {
+  margin: 0 0 0.4rem;
+}
+
+.page-header p,
+.empty-state p {
+  color: #77829a;
+}
+
+.primary-button,
+.danger-button {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.primary-button {
+  background: #536bd1;
+  color: white;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(40, 58, 100, 0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 1rem;
+  border-bottom: 1px solid #edf0f5;
+}
+
+th {
+  color: #77829a;
+  font-size: 0.85rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  white-space: nowrap;
+}
+
+.actions a {
+  color: #4059b5;
+}
+
+.danger-button {
+  padding: 0.4rem 0.6rem;
+  background: #fff0f0;
+  color: #c64040;
+}
+
+.danger-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.feedback {
+  padding: 0.8rem;
+  color: #53627d;
+}
+
+.error {
+  color: #c64040;
+}
+
+.empty-state {
+  padding: 2rem;
+  border-radius: 12px;
+  background: white;
+  text-align: center;
+}
+
+.empty-state a {
+  color: #4059b5;
+}
+
+@media (max-width: 640px) {
+  .users-page {
+    padding: 1rem;
+  }
+
+  .page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,17 @@
+import { HttpInterceptorFn } from '@angular/common/http';
+
+export const authInterceptor: HttpInterceptorFn = (request, next) => {
+  const token = sessionStorage.getItem('auth_token');
+
+  if (!token || request.headers.has('Authorization')) {
+    return next(request);
+  }
+
+  return next(
+    request.clone({
+      setHeaders: {
+        Authorization: `Bearer ${token}`,
+      },
+    }),
+  );
+};

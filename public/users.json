@@ -1,0 +1,88 @@
+[
+  {
+    "id": "U001",
+    "nombre": "Ana Gómez",
+    "documento": "10203040",
+    "vehiculo": "auto",
+    "multasPreviasAnio": 1,
+    "multas": [
+      {
+        "tipo": "velocidad",
+        "fecha": "2024-03-15",
+        "diasPago": 3
+      },
+      {
+        "tipo": "semaforo",
+        "fecha": "2024-06-02",
+        "diasPago": 12
+      }
+    ]
+  },
+  {
+    "id": "U002",
+    "nombre": "Carlos Ruiz",
+    "documento": "20304050",
+    "vehiculo": "camion",
+    "multasPreviasAnio": 3,
+    "multas": [
+      {
+        "tipo": "sin_soat",
+        "fecha": "2024-01-10",
+        "diasPago": 25
+      },
+      {
+        "tipo": "velocidad",
+        "fecha": "2024-05-20",
+        "diasPago": 2
+      },
+      {
+        "tipo": "revision",
+        "fecha": "2024-09-01",
+        "diasPago": 8
+      }
+    ]
+  },
+  {
+    "id": "U003",
+    "nombre": "Laura Pérez",
+    "documento": "30405060",
+    "vehiculo": "motocicleta",
+    "multasPreviasAnio": 0,
+    "multas": [
+      {
+        "tipo": "estacionamiento",
+        "fecha": "2024-07-11",
+        "diasPago": 4
+      }
+    ]
+  },
+  {
+    "id": "U004",
+    "nombre": "Diego Mora",
+    "documento": "40506070",
+    "vehiculo": "auto",
+    "multasPreviasAnio": 5,
+    "multas": [
+      {
+        "tipo": "sin_soat",
+        "fecha": "2024-02-14",
+        "diasPago": 30
+      },
+      {
+        "tipo": "sin_soat",
+        "fecha": "2024-04-01",
+        "diasPago": 10
+      },
+      {
+        "tipo": "velocidad",
+        "fecha": "2024-08-19",
+        "diasPago": 1
+      },
+      {
+        "tipo": "semaforo",
+        "fecha": "2024-10-05",
+        "diasPago": 15
+      }
+    ]
+  }
+]

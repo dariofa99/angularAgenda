@@ -1,0 +1,54 @@
+<section class="users-page">
+  <header class="page-header">
+    <div>
+      <h1>Usuarios</h1>
+      <p>Administra las cuentas registradas.</p>
+    </div>
+    <a class="primary-button" routerLink="/dashboard/users/new">Nuevo usuario</a>
+  </header>
+
+  @if (errorMessage) {
+    <p class="feedback error" role="alert">{{ errorMessage }}</p>
+  }
+
+  @if (isLoading) {
+    <p class="feedback">Cargando usuarios...</p>
+  } @else if (users.length === 0) {
+    <div class="empty-state">
+      <p>No hay usuarios registrados.</p>
+      <a routerLink="/dashboard/users/new">Crear el primer usuario</a>
+    </div>
+  } @else {
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo electrónico</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (user of users; track user.id) {
+            <tr>
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td class="actions">
+                <a [routerLink]="['/dashboard/users', user.id]">Ver</a>
+                <a [routerLink]="['/dashboard/users', user.id, 'edit']">Editar</a>
+                <button
+                  type="button"
+                  class="danger-button"
+                  [disabled]="deletingUserId === user.id"
+                  (click)="deleteUser(user.id)"
+                >
+                  {{ deletingUserId === user.id ? 'Eliminando...' : 'Eliminar' }}
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</section>

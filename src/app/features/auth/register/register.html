@@ -1,0 +1,181 @@
+<div class="auth-container">
+
+  <div class="background-shape shape-one"></div>
+  <div class="background-shape shape-two"></div>
+
+  <section class="auth-card">
+
+    <div class="auth-illustration">
+
+      <div class="brand">
+        <div class="brand-icon">A</div>
+        <span>AgendaFlow</span>
+      </div>
+
+      <div class="illustration-content">
+
+        <div class="welcome-card">
+          <div class="welcome-icon">✦</div>
+          <h2>Un nuevo comienzo</h2>
+          <p>Organiza tus actividades y alcanza tus objetivos.</p>
+        </div>
+
+        <div class="floating-card card-one">
+          <span class="floating-icon">✓</span>
+          <div>
+            <strong>Cuenta creada</strong>
+            <small>¡Todo listo para comenzar!</small>
+          </div>
+        </div>
+
+        <div class="floating-card card-two">
+          <span class="check-icon">★</span>
+          <div>
+            <strong>Tu tiempo importa</strong>
+            <small>Organiza lo importante</small>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="illustration-footer">
+        <h2>Todo lo que necesitas,<br>en un solo lugar.</h2>
+        <p>Crea tu cuenta y empieza a construir una rutina más organizada.</p>
+      </div>
+
+    </div>
+
+    <div class="auth-form-container">
+
+      <div class="mobile-brand">
+        <div class="brand-icon">A</div>
+        <span>AgendaFlow</span>
+      </div>
+
+      <div class="form-content">
+
+        <div class="form-heading">
+          <span class="eyebrow">COMIENZA HOY</span>
+          <h1>Crear cuenta</h1>
+          <p>Completa tus datos para registrarte.</p>
+        </div>
+
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <label for="name">Nombre completo</label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Ej. Juan Pérez"
+              [(ngModel)]="name"
+              required
+              minlength="3"
+              #nameInput="ngModel"
+            >
+
+            @if (nameInput.invalid && nameInput.touched) {
+              <small class="error-message">
+                Ingresa tu nombre completo.
+              </small>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="nombre@correo.com"
+              [(ngModel)]="email"
+              required
+              email
+              #emailInput="ngModel"
+            >
+
+            @if (emailInput.invalid && emailInput.touched) {
+              <small class="error-message">
+                Ingresa un correo válido.
+              </small>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="password">Contraseña</label>
+
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Mínimo 6 caracteres"
+              [(ngModel)]="password"
+              required
+              minlength="6"
+              #passwordInput="ngModel"
+            >
+
+            @if (passwordInput.invalid && passwordInput.touched) {
+              <small class="error-message">
+                La contraseña debe tener al menos 6 caracteres.
+              </small>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirmar contraseña</label>
+
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Repite tu contraseña"
+              [(ngModel)]="confirmPassword"
+              required
+              #confirmInput="ngModel"
+            >
+
+            @if (confirmInput.touched && password !== confirmPassword) {
+              <small class="error-message">
+                Las contraseñas no coinciden.
+              </small>
+            }
+          </div>
+
+          @if (errorMessage) {
+            <p class="error-message" role="alert">{{ errorMessage }}</p>
+          }
+
+          <button
+            type="submit"
+            class="submit-button"
+            [disabled]="registerForm.invalid || password !== confirmPassword || isLoading"
+          >
+            {{ isLoading ? 'Creando cuenta...' : 'Crear mi cuenta' }}
+            <span>→</span>
+          </button>
+
+        </form>
+
+        <div class="form-divider">
+          ¿Ya tienes una cuenta?
+        </div>
+
+        <a routerLink="/login" class="secondary-button">
+          Iniciar sesión
+        </a>
+
+        <p class="terms">
+          Al registrarte, aceptas nuestros términos y condiciones.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>

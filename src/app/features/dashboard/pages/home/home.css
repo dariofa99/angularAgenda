@@ -1,0 +1,14 @@
+.welcome {
+  background-color: white;
+  padding: 35px;
+  border-radius: 12px;
+  min-height: 250px;
+}
+
+.welcome h1 {
+  color: #263b53;
+}
+
+.welcome p {
+  color: #718096;
+}

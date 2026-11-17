@@ -1,0 +1,92 @@
+.user-form-page {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #26375e;
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-header h1 {
+  margin-bottom: 0.4rem;
+}
+
+.page-header p,
+.feedback {
+  color: #77829a;
+}
+
+form {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(40, 58, 100, 0.08);
+}
+
+label {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+input {
+  min-height: 44px;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #dfe5f2;
+  border-radius: 8px;
+  font: inherit;
+}
+
+input[readonly] {
+  background: #f7f8fb;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.6rem 1rem;
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.primary-button {
+  background: #536bd1;
+  color: white;
+}
+
+.secondary-button {
+  border: 1px solid #dfe5f2;
+  background: white;
+  color: #4059b5;
+}
+
+.primary-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.error {
+  color: #c64040;
+}
+
+@media (max-width: 640px) {
+  .user-form-page {
+    padding: 1rem;
+  }
+}

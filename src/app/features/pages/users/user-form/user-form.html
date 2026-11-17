@@ -1,0 +1,78 @@
+<section class="user-form-page">
+  <header class="page-header">
+    <div>
+      <h1>
+        @if (mode === 'create') {
+          Nuevo usuario
+        } @else if (mode === 'edit') {
+          Editar usuario
+        } @else {
+          Detalle del usuario
+        }
+      </h1>
+      <p>Completa la información del usuario.</p>
+    </div>
+  </header>
+
+  @if (isLoading && mode !== 'create') {
+    <p class="feedback">Cargando usuario...</p>
+  }
+
+  @if (errorMessage) {
+    <p class="feedback error" role="alert">{{ errorMessage }}</p>
+  }
+
+  <form #userForm="ngForm" (ngSubmit)="save()">
+    <label for="name">Nombre</label>
+    <input
+      id="name"
+      name="name"
+      [(ngModel)]="name"
+      required
+      minlength="3"
+      [readonly]="isReadOnly"
+    >
+
+    <label for="email">Correo electrónico</label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      [(ngModel)]="email"
+      required
+      email
+      [readonly]="isReadOnly"
+    >
+
+    @if (mode === 'create') {
+      <label for="password">Contraseña</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        [(ngModel)]="password"
+        required
+        minlength="6"
+      >
+    }
+
+    <div class="form-actions">
+      @if (mode === 'view') {
+        <a class="primary-button" [routerLink]="['/dashboard/users', userId, 'edit']">
+          Editar
+        </a>
+      } @else {
+        <button class="primary-button" type="submit" [disabled]="userForm.invalid || isLoading">
+          @if (isLoading) {
+            Guardando...
+          } @else if (mode === 'edit') {
+            Guardar cambios
+          } @else {
+            Crear usuario
+          }
+        </button>
+      }
+      <a class="secondary-button" routerLink="/dashboard/users">Volver a usuarios</a>
+    </div>
+  </form>
+</section>

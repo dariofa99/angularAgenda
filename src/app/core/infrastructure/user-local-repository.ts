@@ -4,9 +4,11 @@ import { NewUser, User } from "../models/user";
 import { UserRepository } from "../repositories/user-repository";
 
 export class UserLocalRepository extends UserRepository {
-    private readonly STORAGE_KEY = 'agendaflow_users';
 
+
+    private readonly STORAGE_KEY = 'agendaflow_users';
     override register(user: NewUser): Observable<AuthResponse> {
+        
         return defer(() => this.create(user)).pipe(
             delay(500),
             map(createdUser => this.createAuthResponse(createdUser))

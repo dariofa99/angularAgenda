@@ -15,7 +15,11 @@ export class AuthFacade {
 
     return this.userService
       .register(normalizedUser)
-      .pipe(tap((response) => this.storeToken(response)));
+      .pipe(
+
+        tap((response) => this.storeToken(response))
+        
+      );
   }
 
   login(credentials: AuthCredentials): Observable<AuthResponse> {

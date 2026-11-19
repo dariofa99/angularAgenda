@@ -10,6 +10,8 @@ import { NewUser, User } from '../models/user';
 export class UserService  {
   private userRepository = inject(UserRepository);
 
+  //private repo = new UserRepository();
+
   register(user: NewUser): Observable<AuthResponse> {
     return this.userRepository.register(user);
   }

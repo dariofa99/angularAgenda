@@ -5,6 +5,7 @@ import { Login } from './features/auth/login/login';
 import { Register } from './features/auth/register/register';
 import { Users } from './features/pages/users/users/users';
 import { UserForm } from './features/pages/users/user-form/user-form';
+import { TasksList } from './features/pages/tasks/tasks-list/tasks-list';
 
 
 export const routes: Routes = [
@@ -43,6 +44,11 @@ export const routes: Routes = [
                 data: { mode: 'view' }
             },
             {
+                path: 'tasks',
+                component: TasksList,
+                pathMatch: 'full'
+            },
+            {
                 path: '',
                 component: Home
             }
@@ -56,6 +62,6 @@ export const routes: Routes = [
 
     {
         path: '**',
-        redirectTo: 'login'
+        redirectTo: 'dashboard'
     }
 ];

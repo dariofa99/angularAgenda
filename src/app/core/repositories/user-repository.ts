@@ -18,5 +18,7 @@ export abstract class UserRepository {
 
   abstract delete(id: number): Observable<void>;
 
+  
+
 }
 

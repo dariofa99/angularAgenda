@@ -1,0 +1,68 @@
+<div class="tasks-container">
+    <div class="tasks-header">
+        <div>
+            <h2>Mis tareas</h2>
+            <p>Administra y organiza tus actividades pendientes.</p>
+        </div>
+
+        <button (click)="abrirForm = !abrirForm" class="btn-add">+ Nueva tarea</button>
+    </div>
+
+    <div class="table-container">
+        @if(!abrirForm){
+        <table class="tasks-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Tarea</th>
+                    <th>Descripción</th>
+                    <th>Fecha límite</th>
+                    <th>Prioridad</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td class="task-name">Estudiar Angular</td>
+                    <td>Repasar componentes y servicios.</td>
+                    <td>20/11/2026</td>
+                    <td>
+                        <span class="priority high">Alta</span>
+                    </td>
+                    <td>
+                        <span class="status pending">Pendiente</span>
+                    </td>
+                    <td>
+                        <div class="actions">
+                            <button class="btn-edit" title="Editar">✎</button>
+                            <button class="btn-delete" title="Eliminar">✕</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        }
+    </div>
+
+    <div class="table-footer">
+        <span>Mostrando 1 de 1 tareas</span>
+        <span>Última actualización: Hoy</span>
+    </div>
+
+
+    @if(abrirForm){
+    <app-tasks-form></app-tasks-form>
+    }
+
+
+
+
+
+
+
+
+
+</div>

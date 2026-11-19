@@ -1,0 +1,73 @@
+
+
+<div class="form-container">
+
+    <div class="form-header">
+        <h2>Nueva tarea</h2>
+        <p>Completa la información para registrar una nueva tarea.</p>
+    </div>
+
+    <form (submit)="guardarTarea()">
+
+        <div class="form-group">
+            <label for="title">Título de la tarea</label>
+            <input
+                
+                name="nombreTarea"
+                type="text"
+                id="title"
+                placeholder="Ej. Estudiar Angular"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="description">Descripción</label>
+            <textarea
+                id="description"
+                rows="4"
+                placeholder="Describe brevemente la tarea..."
+            ></textarea>
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label for="date">Fecha límite</label>
+                <input type="date" id="date">
+            </div>
+
+            <div class="form-group">
+                <label for="priority">Prioridad</label>
+                <select id="priority">
+                    <option value="">Seleccionar prioridad</option>
+                    <option value="low">Baja</option>
+                    <option value="medium">Media</option>
+                    <option value="high">Alta</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="status">Estado</label>
+            <select id="status">
+                <option value="pending">Pendiente</option>
+                <option value="progress">En progreso</option>
+                <option value="completed">Completada</option>
+            </select>
+        </div>
+
+        <div class="form-actions">
+            <button type="reset" class="btn-cancel">
+                Limpiar
+            </button>
+
+            <button type="submit" class="btn-save">
+                Guardar tarea
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
